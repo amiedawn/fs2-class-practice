@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title>JS Demo</title>
+</head>
+<body>
+    <p id="txtid">Before the script...</p>
+    <br>
+    Enter name here: <input type="text" id="uname" size="20" /><br><br>
+    Enter password here: <input type="password" id="pwd" size="20" /><br><br>
+    <button onclick="changeColor()">click here</button><br><br>
+
+    First Number: <input type="number" id="num1" size="20" /><br><br>
+    Second Number: <input type="number" id="num2" size="20" /><br><br>
+    Sum: <input type="number" id="sum" size="20"/><br><br>
+    Sum: <p id="sum1"></p>
+    <br><br>
+    <button onclick="getSum()">Get Sum</button><br><br>
+    <div id="mouseId" onmouseover="mouseOver()">look at me</div>
+</body>
+<script>
+    console.log("text");
+    function changeColor() {
+        document.body.style.backgroundColor="cyan";
+        var nameEl = document.getElementById("uname").value;
+        var passwordEl = document.getElementById("pwd").value;
+        if (nameEl == "" || passwordEl == "") {
+            alert("Username or password is blank");
+        } else {
+        alert("Welcome " + nameEl);
+        }
+        document.getElementById("txtid").innerHTML = "After button clicked";
+    };
+
+    function mouseOver() {
+        document.getElementById("mouseId").innerHTML = "I have changed!";
+    };
+
+    function getSum() {
+        var a, b, c;
+        a= parseInt(document.getElementById("num1").value);
+        b= Number(document.getElementById("num2").value);
+        c= a+b;
+        document.getElementById("sum").value = c;
+        document.getElementById("sum1").innerHTML = c;
+    };
+</script>
+</html>
